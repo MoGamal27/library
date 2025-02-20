@@ -9,6 +9,6 @@ class BookAPIView(generics.ListCreateAPIView):
     
     
 class BookDetailAPIView(generics.RetrieveUpdateDestroyAPIView):
-    permission_classes = (IsAuthorOrReadOnly)
+    permission_classes = (IsAuthorOrReadOnly,)
     queryset = Book.objects.all()
     serializer_class = BookSerializer
